@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  	<title>Sistema de Exibição de Fotos</title>
+
+  <style>
+	*{
+		padding: 0px;
+		margin: 0px;
+		background-color: blueviolet;
+;
+	}
+	
+	label{
+		font-size: 45px;
+		color: white;
+		font-family: Arial, Helvetica, sans-serif;
+		margin-top: 50px;
+	}
+
+	.enviar{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-top: 100px;
+	}
+
+	button{
+		width: 200px;
+		height: 50px;
+		background-color: white;
+		color: blueviolet;
+		font-size: 20px;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	input{
+		height: 50px;
+		width: 400px;
+		background-color: white;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 20px;
+		color: blueviolet;
+	}
+
+	#fotoContainer{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 100px;
+	}
+
+	#imgtriste{
+		height: 1000px;
+	}
+
+	#imgfeliz{
+		height: 700px;
+	}
+
+	#comentario{
+		font-size: 40px;
+		font-family: Arial, Helvetica, sans-serif;
+		color: white;
+		margin-top: 50px;
+		margin-bottom: 100px;
+	}
+  </style>
+</head>
+<body style="margin-top: 100px;">
+	<CENTER><label for="numero"><b>De 0 a 100 o quanto você me ama?</b></label></CENTER>
+	
+	<div class="enviar">
+		<input type="number" id="numero" min="0" max="100">
+		<button onclick="exibirFoto()">Enviar</button>
+	</div> 
+  
+	
+	<div id="fotoContainer"></div>
+
+  <script>
+	function exibirFoto() {
+  var numero = parseInt(document.getElementById("numero").value);
+  var fotoContainer = document.getElementById("fotoContainer");
+  
+  if (numero < 100) {
+    fotoContainer.innerHTML = '<img src="triste.jpeg" alt="Foto 1" id="imgtriste"> <p id="comentario"><b>NÃO AMA MAIS O DIDI? 😭</b></p>';
+  } else {
+    fotoContainer.innerHTML = '<img src="feliz.jpeg" alt="Foto 2" id="imgfeliz"> <br> <p id="comentario"><b>EU AMO BEEEM MAIS!!</b></p>';
+  }
+}
+  </script>
+</body>
+</html>
